@@ -27,4 +27,11 @@ public class ScoreBoardTest {
         Assertions.assertEquals(2, sb.getGames().get(0).getHomeScore());
         Assertions.assertEquals(1, sb.getGames().get(0).getAwayScore());
     }
+
+    @Test
+    public void testEndGame() {
+        sb.addNewGame("Poland", "Holland");
+        sb.endGame("Poland", "Holland");
+        Assertions.assertEquals(0, sb.getGames().size());
+    }
 }
